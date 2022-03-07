@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a partial reproduction of template from TraversyMedia, using React Components.
+
+Original template: <https://github.com/bradtraversy/bootstrap-bootcamp-website>
+
 ## Available Scripts
 
 In the project directory, you can run:
