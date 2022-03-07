@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Showcase from "./components/Showcase";
+import Newsletter from "./components/Newsletter";
+import Boxes from "./components/Boxes";
+import Footer from "./components/Footer";
+import ModalEnrollment from "./components/ModalEnrollment";
+import devfocus from "./devfocus.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+
+// https:stackoverflow.com/questions/42515739/how-to-create-sections-with-react
 
 function App() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Showcase handleShow={handleShow} devfocus={devfocus} />
+      <Newsletter />
+      <Boxes />
+      <Footer />
+      <ModalEnrollment
+        show={show}
+        onHide={handleClose}
+        onClose={handleClose}
+        onSubmit={handleClose}
+      />
+    </>
   );
 }
 
